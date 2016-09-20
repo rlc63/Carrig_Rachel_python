@@ -221,25 +221,18 @@ def filter_long_words(input, n):
     return list(filter(lambda i: len(i) > n, input)) #we take the length n given, and use it to filter the inputs for those that are longer than n. we then return the list of those words
     
 """
-NEED HELP
-Question 11: 
-Represent a small bilingual lexicon as a Python dictionary
-in the following fashion {"merry":"god",
-"christmas":"jul","and":"och","happy":gott","new":"nytt","y
-ear":"år"}and use it to translate your Christmas cards from
-English into Swedish. Use the higher order function map()to write
-a function translate() that takes a list of English words and
-returns a list of Swedish words.
+COMPLETE
+Question 11:  . Use the higher order function map()to write a function that takes a specified list of English words and returns a specified list of Swedish words.
 """
-def translatemap(english): #changed the name from translate so as not to duplicate the function from question 1
+def translatemap(*english): #changed the name from translate so as not to duplicate the function from question 1
     """
-    
-
+    we are defining a function that translates specific English words into Swedish using a map function
+    Pameters: the English words in the defined dictionary
+    Return: the corresponding Swedish words for each inputted English word within the defined dictionary
     """     
-    dict = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"år"}
-    translated = map(lambda swedish: dict[swedish], english)
-    return list(translated)
-    #?????
+    dict = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"år"} #first, we define the words that can be translated from English to Swedish
+    translated = map(lambda swedish: dict[swedish], english) #we define translated, which is the map of each English word to the corresponding Swedish word
+    return list(translated) #we then return the list of each of the words that has been mapped
     
 """
 NEED HELP
