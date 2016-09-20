@@ -82,6 +82,7 @@ def decoder(code):
  #if you print out the code, it returns "Caesar cipher? I much prefer Caesar salad!"
     
 """
+COMPLETE
 Question 4: Define a "spelling correction" function that takes a string and sees to it that 1) two or more occurrences of the space character is compressed into one, and 2) inserts an extra space after a period if the period is directly followed by a letter
 """
 def correct(mistakes):
@@ -96,6 +97,7 @@ def correct(mistakes):
     print(correctmistakes) #we then print the corrected sentence, which combines both of our definitions for the correctmistakes into one completely correct sentence
 
 """
+COMPLETE
 Question 5: Define a function changing an infinitive verb to its third person singular form (replacing y with ies, adding es to verbs ending in  o, ch, s, sh, x, or z, and adding s to other verbs)
 """
 def make_3sg_form(verb):
@@ -113,6 +115,7 @@ def make_3sg_form(verb):
     print(newverb) #print the new verb created using the above rules
 
 """
+COMPLETE
 Question 6: Define a function that changes an infinitive verb to the present participle. For words ending in e, drop the e and add ing (with exceptions), for words ending in ie, change to y and add ing, for words that are consonant-vowel-consonant, double second consonant and add ing, and for all other words add ing
 """
 def make_ing_form(ingverb):
@@ -143,49 +146,139 @@ def make_ing_form(ingverb):
     print(newingverb) #we print the result that is the new verb conjugated for whichever of the above situations the verb fits
 
 """
-COME BACK TO THIS 
-Question 7: Using the higher order function reduce(), write a function
-max_in_list()that takes a list of numbers and returns the largest
-one. Then ask yourself: why define and call a new function, when I
-can just as well call the reduce() function directly?
+COMPLETE
+Question 7: Using the higher order function reduce(), write a function that takes a list of numbers and returns the largest one
 """
+import functools #we are going to import the tool so that we can use reduce, as it is not inherently recognized in python
 
-
+def max_in_list(numbers): #we define max_in_list for the numbers provided
+    """
+    we are defining a function that takes a list of numbers and returns the largest of those numbers
+    Parameters: we will input a list of numbers
+    Return: the largest number inputted
+    """    
+    return functools.reduce(max, numbers) #when given the function max_in_list, we want it to call the function reduce, in which it reduces the list of numbers inputted to only the maximum one
+    
 """
-NEED HELP
+COMPLETE
 Question 8: Write a program that maps a list of words into a list of integers
-representing the lengths of the correponding words. Write it in
-three different ways: 1) using a for-loop, 2) using the higher order
-function map(), and 3) using list comprehensions.
+representing the lengths of the correponding words in three ways - with a for loop, the map function, and list comprehensions
 """
 #first, we will use the for-loop 
 def length_of_words_forloop(words0):
+    """
+    we are defining the function length_of_words_forloop which will return the length of the words given using a for loop in the code
+    Parameters: a list of characters
+    Return: the length of each word separated by a comma in the input
+    """
     intlengths0 = [] #we start out with nothing in the output
     for word0 in words0: #for each word found in the input
         intlengths0.append(len(word0)) #the lengths is the length of each word added to 0 (giving the length of each word), separately
     return intlengths0 #the result is returned, which is a list of the lengths of each word
     
-#next, we will use the map function>???????
+#next, we will use the map function
 def length_of_words_map(words1):
-
-    return map(len, words1)
+    """
+    we are defining the function length_of_words_map which will return the length of the words given using the map function in the code
+    Parameters: a list of characters
+    Return: the length of each word separated by a comma in the input
+    """
+    return list(map(len, words1)) #for the fucntion, we map each word to its length. we then return the list of the lengths of each word
     
-#finally, we will use list comprehensions
+#finally, we will use list comprehension
 def length_of_words_list(words2): 
+    """
+    we are defining the function length_of_words_list which will return the length of the words given using list comprehension in the code
+    Parameters: a list of characters
+    Return: the length of each word separated by a comma in the input
+    """
     return [len(word2) for word2 in words2] #here, we return the length (using the built in len function) for each word listed in the input, words2
     
     
 """
-Question 9: Write a function find_longest_word()that takes a list of words
-and returns the length of the longest one. Use only higher order
-functions.
+COMPLETE
+Question 9: Write a function find_longest_word()that takes a list of words and returns the length of the longest one using only higher order functions
 """
 def find_longest_word(longword):
-    ##need to use the result from question 7 for this question
+    """
+    we define the function that will take the length of each word inputted and return the longest length
+    Parameters: a list of characters
+    Return: the length of the longest word in the inputted list
+    """
+    longwordlength = list(map(len, longword)) #we first define what the length of each word is by mapping each word to its length and listing out those lengths
+    return functools.reduce(max, longwordlength) #we then call the lengths mapped out above, and using the reduce function pick the max of that list and return that max
 
 """
-Question 10: Using the higher order function filter(), define a function filter_long_words()that takes a list of words and an integer nand returns the list of words that are longer than n
+COMPLETE
+Question 10: Using the higher order function filter(), define a function that takes a list of words and an integer and returns the list of words longer than the integer
 """
-def filter_long_words(filterwords):
-    filter(len, n)
-    return n
+def filter_long_words(input, n):
+    """
+    this function takes a list of words, an integer n, and returns the length of each word that is larger than n
+    Parameters: a list of words and an integer n
+    Return: the words in the list that are longer than n
+    """
+    return list(filter(lambda i: len(i) > n, input)) #we take the length n given, and use it to filter the inputs for those that are longer than n. we then return the list of those words
+    
+"""
+NEED HELP
+Question 11: 
+Represent a small bilingual lexicon as a Python dictionary
+in the following fashion {"merry":"god",
+"christmas":"jul","and":"och","happy":gott","new":"nytt","y
+ear":"år"}and use it to translate your Christmas cards from
+English into Swedish. Use the higher order function map()to write
+a function translate() that takes a list of English words and
+returns a list of Swedish words.
+"""
+def translatemap(english): #changed the name from translate so as not to duplicate the function from question 1
+    """
+    
+
+    """     
+    dict = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"år"}
+    translated = map(lambda swedish: dict[swedish], english)
+    return list(translated)
+    #?????
+    
+"""
+NEED HELP
+Question 12: Implement the higher order functions map(), filter()and
+reduce(). (They are built-in but writing them yourself may be a
+good exercise.)
+"""
+def mapfunc(functionmap, iterablemap):
+    """
+    we are defining a function that does what the built in map function does
+    Parameters: a function is given first for functionmap, and then a string or list is given for iterablemap
+    Return: the application of the function to the list or string inputted
+    """
+    ansmap = [] #we start out with an empty aswer
+    for i in iterablemap: #need to make work for more than 1 variable? map works for 2
+        mapping = functionmap(i)
+        ansmap.append(mapping)
+    return ansmap
+
+def filterfunc(functionfilter, iterablefilter):
+    """
+    we are defining a function that does what the built in filter function does
+    Parameters: a function is given first for functionfilter, and then a string or list is given for iterablefilter
+    Return: the items in the string or list that match the parameters given in the function
+    """
+    ansfilter = [] #we start out with an empty answer
+    for j in iterablefilter: #for each item in the iterablefilter input
+        if functionfilter(j) == True: #if the item is true under the parameters of the function
+            ansfilter.append(j) #we will add that item to the list of the answers that are outputted
+    return ansfilter #we then produce all the items that fit the parameters of the function
+
+def reducefunc(functionreduce, sequencereduce, initial=None):
+    """
+    we are defining a function that does what the built in reduce function does
+    Parameters: a function is given for functionreduce, then a string or list for sequencereduce, and the initial value is none
+    Return: the value that wins out the reduce function when compared to the other values in the inputted sequence
+    """
+    ansreduce = initial if initial else sequencereduce[0] #the answer is the initial value in the list given in sequencereduce
+    for k in sequencereduce: #for each element in sequencereduce
+        ansreduce = functionreduce(ansreduce, k) #the answer applies that element to the function and compares it to the previous answer (or 0 if there is no previous answer)
+    return ansreduce #the element that best fits the function after all iterations is kept and produced
+    
