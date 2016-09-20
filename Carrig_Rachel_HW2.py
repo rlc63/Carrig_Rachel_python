@@ -235,10 +235,8 @@ def translatemap(*english): #changed the name from translate so as not to duplic
     return list(translated) #we then return the list of each of the words that has been mapped
     
 """
-NEED HELP
-Question 12: Implement the higher order functions map(), filter()and
-reduce(). (They are built-in but writing them yourself may be a
-good exercise.)
+COMPLETE
+Question 12: Implement the higher order functions map(), filter() and reduce()
 """
 def mapfunc(functionmap, iterablemap):
     """
@@ -247,10 +245,10 @@ def mapfunc(functionmap, iterablemap):
     Return: the application of the function to the list or string inputted
     """
     ansmap = [] #we start out with an empty aswer
-    for i in iterablemap: #need to make work for more than 1 variable? map works for 2
-        mapping = functionmap(i)
-        ansmap.append(mapping)
-    return ansmap
+    for i in iterablemap: #for each element in the given iterable
+        mapping = functionmap(i) #we apply the function to the iterable and have that equal mapping
+        ansmap.append(mapping) #for each function applied to each element in iterable, we add the solution to the list of final answers
+    return ansmap #we then print the list of final answers
 
 def filterfunc(functionfilter, iterablefilter):
     """
