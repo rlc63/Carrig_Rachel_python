@@ -300,7 +300,7 @@ def find_longest_word(longword): #this function is similar to the max_in_list fu
     lcounts = length_of_words(longword) #we create lcounts, which is the length of each word given (so the result is a list of numbers)
     heaviest = max_in_list(lcounts) #we then take the numbers from lcounts and use the previously defined max_in_list function to see which is the largest
     return heaviest #this prints the largest of the numbers, which is the largest length of a word in the set
-    
+    #return max_in_list(length_of_words(longword)) #could use this instead of the three above lines
 """
 COMPLETE
 Question 16: Write a function that takes a list of words and an integer n and returns the list of words that are longer than n.
