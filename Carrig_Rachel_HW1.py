@@ -4,7 +4,9 @@ Created on Thu Sep  8 19:18:19 2016
 
 @author: Rachel Carrig; rlc63
 """
-
+#Overall Comment: Very good assignment! You covered all possible situations and commented well. But please include examples
+#to show that your functions really work. I have made a few comment with "Comment:" in front, you may have a look. If any
+#misunderstanding happened. Please feel free to email me.
 """
 COMPLETE
 Question 1: This function defines which number is the larger of two given numbers.
@@ -25,7 +27,7 @@ x = 2#here we give values for x and y corresponding to a and b
 y = 3
 
 print_max(x, y)#prints the maximum of x and y; in this case y
-
+#Comment: You don't need to set variable x and y individually, put 2 and 3 into function directly.
 
 """
 COMPLETE
@@ -102,7 +104,7 @@ def translate(language): #this function will translate the language inputted int
         else:
             newtext+=i #if the character is NOT a consonant, it will stay the same
     print(newtext) #the code will now print the language in Robber's Language
-    
+#Comment: it is good to cover all possible situations!  
     
 """
 COMPLETE
