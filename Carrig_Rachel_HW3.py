@@ -4,6 +4,8 @@ Created on Thu Sep 22 19:11:22 2016
 
 @author: ibrlouise
 """
+#Overall Comment: Good exercise. You can save the data or table you read in so that you don't need to read in every time.
+
 """
 first, we import the information as a table into python from a local path
 """
@@ -18,6 +20,8 @@ we want to display the first 10 and last 10 rows:
 """
 pandas.read_table("/Users/ibrlouise/Documents/Grad School - Fall 2016/510/Homework/bezdekIris.data", 
                   header=0, sep=',', skiprows=range(11, 141))
+#Comment:Actually you can save the data or table you read in to one data frame. And do operations based on this.
+
 #in this function, we use the skiprows command to skip the range of rows 11 to 141, leaving us with the 
 #first ten and the last ten rows
 
