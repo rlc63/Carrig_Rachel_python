@@ -4,7 +4,8 @@ Created on Thu Sep 15 18:49:06 2016
 
 @author: ibrlouise
 """
-
+#Overall Comment: Very Good Exercise! The format and logic are effective and efficient. And you comments showed you have
+#                 deep understanding of the code. Keep on going !
 """
 COMPLETE
 Question 1: Creating a dictionary of a few words to translate Christmas cards from English to Swedish
@@ -56,6 +57,7 @@ def char_freq(text):
             frequency[x] = 1 #we always want the frequency of each number to be at least 1
     return frequency #this tells the function to return each frequency
 
+#Comment: Very good logic, you have covered all the possibilities in the text!
 """
 COMPLETE
 Question 3: implement an encoder/decoder of ROT-13 (cryptography)
